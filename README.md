@@ -1,5 +1,3 @@
-# Omnifood_Project
-
 # Omnifood
 
 ## About Omnifood
@@ -128,3 +126,20 @@ Careers
 Recipe directory
 Help center
 Privacy & terms
+
+<!-- ########
+
+## Sections
+
+- Logo + Navigation
+- Hero
+- Featured in
+- How it works
+- Diets
+- Meal (and list of diets)
+- Gallery
+- Testimonials + Gallery
+- Pricing + Features
+- Features
+- Call to Action (CTA)
+- Footer -->
