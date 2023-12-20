@@ -1,3 +1,10 @@
+// Class Selectors
+const header = document.querySelector(".header");
+
+// Links
+const allLinks = document.querySelectorAll("header a:link");
+console.log(allLinks);
+
 // NavBar
 const worksNav = document.querySelector(".working-nav-link");
 const mealNav = document.querySelector(".meal-nav-link");
@@ -12,23 +19,43 @@ const testimonialSection = document.querySelector(".section-testimonial");
 const pricingSection = document.querySelector(".section-pricing");
 const signupSection = document.querySelector(".section-cta");
 
+// Buttons
+const btnNav = document.querySelector(".btn-mobile-nav");
+
 // Smooth Scrolling functionality for NavBar
-worksNav.addEventListener("click", function () {
-  workingSection.scrollIntoView({ behavior: "smooth" });
+const smoothScroll = function (section) {
+  return function (e) {
+    e.preventDefault();
+    section.scrollIntoView({ behavior: "smooth" });
+  };
+};
+worksNav.addEventListener("click", smoothScroll(workingSection));
+mealNav.addEventListener("click", smoothScroll(mealSection));
+testimonialNav.addEventListener("click", smoothScroll(testimonialSection));
+pricingNav.addEventListener("click", smoothScroll(pricingSection));
+signupNav.addEventListener("click", smoothScroll(signupSection));
+
+// Creating sticky navigation
+const navHeight = header.getBoundingClientRect().height;
+function fixNav() {
+  if (window.scrollY >= navHeight) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+window.addEventListener("scroll", fixNav);
+
+// Implementing mobile navigation
+btnNav.addEventListener("click", function () {
+  header.classList.toggle("nav-open");
 });
 
-mealNav.addEventListener("click", function () {
-  mealSection.scrollIntoView({ behavior: "smooth" });
-});
-
-testimonialNav.addEventListener("click", function () {
-  testimonialSection.scrollIntoView({ behavior: "smooth" });
-});
-
-pricingNav.addEventListener("click", function () {
-  pricingSection.scrollIntoView({ behavior: "smooth" });
-});
-
-signupNav.addEventListener("click", function () {
-  signupSection.scrollIntoView({ behavior: "smooth" });
+// Close mobile navigation
+allLinks.forEach(function (link) {
+  link.addEventListener("click", function () {
+    if (link.classList.contains("main-nav-link")) {
+      header.classList.toggle("nav-open");
+    }
+  });
 });

@@ -42,12 +42,20 @@ body {
   /* Because we want to make header sticky */
   height: 9.6rem;
   padding: 0 4.8rem;
-
   position: relative;
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+
 .logo {
   height: 2.2rem;
 }
+
 /* ************************ */
 /* NAVIGATION */
 /* ************************ */
@@ -537,6 +545,7 @@ body {
     ),
     url("../img/eating.jpg");
   background-size: cover;
+  background-position: center;
 }
 
 .cta-form {
@@ -592,7 +601,8 @@ body {
   flex-direction: column;
 }
 
-.logo {
+.logo--footer {
+  height: 2.2rem;
   display: block;
   margin-bottom: 3.2rem;
 }
