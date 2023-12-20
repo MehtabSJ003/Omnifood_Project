@@ -43,7 +43,7 @@
   letter-spacing: -0.5px;
 }
 .heading-primary {
-  font-size: 6.2rem;
+  font-size: 5.2rem;
   font-weight: 700;
   line-height: 1.05;
   color: #333;
@@ -146,6 +146,7 @@
   display: flex;
   align-items: center;
   gap: 1.6rem;
+  line-height: 1.2;
 }
 .list-icon {
   width: 3rem;
