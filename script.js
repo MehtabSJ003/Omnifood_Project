@@ -12,6 +12,8 @@ const testimonialNav = document.querySelector(".testimonial-nav-link");
 const pricingNav = document.querySelector(".pricing-nav-link");
 const signupNav = document.querySelector(".signup-nav-link-btn");
 
+const heroSection = document.querySelector(".section-hero");
+
 // Sections
 const workingSection = document.querySelector(".section-how");
 const mealSection = document.querySelector(".section-meals");
@@ -36,12 +38,30 @@ pricingNav.addEventListener("click", smoothScroll(pricingSection));
 signupNav.addEventListener("click", smoothScroll(signupSection));
 
 // Creating sticky navigation
-const navHeight = header.getBoundingClientRect().height;
+// const navHeight = header.getBoundingClientRect().height;
 function fixNav() {
-  if (window.scrollY >= navHeight) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      function (entries) {
+        const ent = entries[0];
+        // console.log(ent);
+        if (ent.isIntersecting === false) {
+          document.body.classList.add("sticky");
+          // Changing background color of header
+          header.style.backgroundColor = "#fff";
+        } else {
+          document.body.classList.remove("sticky");
+          header.style.backgroundColor = "#fdf2e9";
+        }
+      },
+      // Add root, threshold and rootMargin
+      {
+        root: null,
+        threshold: 0,
+        rootMargin: `-80px`,
+      }
+    );
+    observer.observe(heroSection);
   }
 }
 window.addEventListener("scroll", fixNav);
