@@ -12,5 +12,5 @@ It is a technology enthusiast with a major focus on your well-being through a he
 - CSS3
 - JavaScript
 
-Your technology stack includes **HTML5** for structuring the content, **CSS3** for styling and layout, and **JavaScript** to enhance interactivity and user experience. The AI component is at the core of my solution, driving the meal planning process and ensuring a personalized and health-focused approach for you. Together, these technologies enable me to deliver a seamless and efficient platform that empowers you to maintain a healthy diet even in your busy life.
+This technology stack includes **HTML5** for structuring the content, **CSS3** for styling and layout, and **JavaScript** to enhance interactivity and user experience. The AI component is at the core of my solution, driving the meal planning process and ensuring a personalized and health-focused approach for you. Together, these technologies enable me to deliver a seamless and efficient platform that empowers to maintain this site.
 
